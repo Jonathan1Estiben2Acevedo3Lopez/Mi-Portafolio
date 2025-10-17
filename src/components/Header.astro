@@ -1,4 +1,8 @@
 ---
+import avatarImage from "../assets/Jonathan_Acevedo.webp";
+import flagEsImage from "../assets/Flag_Colombia.webp";
+import flagEnImage from "../assets/Flag_United_States.webp";
+
 const links = [
   { href: "#inicio", label: "Inicio" },
   { href: "#sobre-mi", label: "Sobre mi" },
@@ -7,63 +11,70 @@ const links = [
   { href: "#contacto", label: "Contactame" },
 ];
 
-import avatar from "../assets/Jonathan_Acevedo.webp";
-
-const avatarSrc = typeof avatar === "string" ? avatar : avatar.src;
+const avatarSrc = typeof avatarImage === "string" ? avatarImage : avatarImage.src;
+const flagEsSrc = typeof flagEsImage === "string" ? flagEsImage : flagEsImage.src;
+const flagEnSrc = typeof flagEnImage === "string" ? flagEnImage : flagEnImage.src;
 ---
 
 <header
   id="site-header"
-  class="fixed top-4 inset-x-4 z-50 /*Posicionamiento*/ 
-    grid grid-cols-[auto_1fr_auto] items-center gap-4 /*Organización cajas internas*/ 
-    bg-transparent backdrop-blur-none border border-transparent /*Color y fondo*/
-    rounded-2xl */Forma / Estética*/
-    transition-all duration-300 /*Animaciones y transiciones*/"
-  >
-
-  <!-- 🟥 Izquierda -->
-  <div class="flex items-center gap-2 sm:gap-3">
-
-    <!-- 🟦 Imagen -->
+  class="fixed top-4 inset-x-4 z-50 grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-2xl border border-transparent bg-transparent transition-all duration-300"
+>
+  <div class="flex items-center gap-3">
     <img
       src={avatarSrc}
       alt="Foto de perfil de Jonathan Acevedo"
-      class="size-10 sm:size-16 */Tamaño adaptable*/
-        rounded-full /*Forma circular*/
-        object-cover /*Escalado de imagen*/
-        ring-2 ring-slate-200 dark:ring-slate-700 /*Borde/anillo oscuro/claro*/
-        hover:ring-blue-500 hover:scale-110 /*animación*/
-        transition-transform duration-300 ease-out /*Transición suave*/"
+      class="size-14 rounded-full object-cover ring-2 ring-slate-200 transition-transform duration-300 ease-out hover:scale-110 hover:ring-blue-500 dark:ring-slate-700"
     />
-
-    <!-- 🟦 Caja texto Nombre - ocupación -->
     <div class="leading-tight">
-
-      <p class="font-bold
-          text-slate-900 dark:text-slate-100
-          text-[10px] sm:text-base">
+      <p class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">
         Jonathan Acevedo
       </p>
-
-      <p class="text-[9px] sm:text-base
-          text-slate-600 dark:text-slate-400">
-        Ingeniero de Sistemas y computación
+      <p class="text-xs font-medium text-slate-600 dark:text-slate-400 sm:text-sm">
+        Ingeniero de Sistemas y Computacion
       </p>
-
     </div>
-
   </div>
 
+  <nav aria-label="Navegacion principal" class="hidden justify-self-center md:block">
+    <ul class="flex items-center gap-6">
+      {links.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class="relative font-medium text-slate-700 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-blue-500 after:transition-transform after:duration-500 hover:text-blue-600 hover:after:scale-x-100 dark:text-slate-200 dark:hover:text-blue-400 dark:after:bg-blue-400"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
 
-
-
-  <!-- 🟥 Derecha -->
-  <div>
-
+  <div class="flex items-center justify-end gap-3 md:gap-4">
+    <button
+      id="lang-toggle"
+      type="button"
+      aria-label="Cambiar idioma"
+      class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate-800 transition-transform duration-200 hover:scale-105 hover:border-blue-500 hover:text-blue-600 focus:outline-none dark:border-slate-700 dark:text-blue-400 dark:hover:border-blue-400"
+      data-lang="es"
+      data-flag-es={flagEsSrc}
+      data-flag-en={flagEnSrc}
+      data-label-es="ES"
+      data-label-en="EN"
+      data-alt-es="Idioma actual: Espanol"
+      data-alt-en="Current language: English"
+      aria-live="polite"
+    >
+      <img
+        id="lang-flag"
+        src={flagEsSrc}
+        alt="Idioma actual: Espanol"
+        class="h-4 w-6 rounded-sm object-cover shadow-sm md:h-5 md:w-8"
+      />
+      <span class="hidden sm:inline" data-lang-label>ES</span>
+    </button>
   </div>
-
-  
-
 </header>
 
 <script type="module" src="/scripts/header.js"></script>
