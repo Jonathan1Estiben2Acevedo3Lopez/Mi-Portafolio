@@ -8,6 +8,8 @@ const links = [
 ];
 
 import avatar from "../assets/Jonathan_Acevedo.webp";
+
+const avatarSrc = typeof avatar === "string" ? avatar : avatar.src;
 ---
 
 <header
@@ -24,7 +26,7 @@ import avatar from "../assets/Jonathan_Acevedo.webp";
 
     <!-- 🟦 Imagen -->
     <img
-      src={avatar}
+      src={avatarSrc}
       alt="Foto de perfil de Jonathan Acevedo"
       class="size-10 sm:size-16 */Tamaño adaptable*/
         rounded-full /*Forma circular*/
