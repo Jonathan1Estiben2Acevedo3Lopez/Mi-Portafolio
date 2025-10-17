@@ -52,29 +52,37 @@ const flagEnSrc = typeof flagEnImage === "string" ? flagEnImage : flagEnImage.sr
   </nav>
 
   <div class="flex items-center justify-end gap-3 md:gap-4">
-    <button
-      id="lang-toggle"
-      type="button"
-      aria-label="Cambiar idioma"
-      class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate-800 transition-transform duration-200 hover:scale-105 hover:border-blue-500 hover:text-blue-600 focus:outline-none dark:border-slate-700 dark:text-blue-400 dark:hover:border-blue-400"
-      data-lang="es"
-      data-flag-es={flagEsSrc}
-      data-flag-en={flagEnSrc}
-      data-label-es="ES"
-      data-label-en="EN"
-      data-alt-es="Idioma actual: Espanol"
-      data-alt-en="Current language: English"
-      aria-live="polite"
-    >
-      <img
-        id="lang-flag"
-        src={flagEsSrc}
-        alt="Idioma actual: Espanol"
-        class="h-4 w-6 rounded-sm object-cover shadow-sm md:h-5 md:w-8"
-      />
-      <span class="hidden sm:inline" data-lang-label>ES</span>
-    </button>
-  </div>
+  <button
+    id="lang-toggle"
+    type="button"
+    aria-label="Cambiar idioma"
+    class="inline-flex items-center gap-1 sm:gap-2 
+           rounded-full px-2 py-[2px] sm:px-3 sm:py-1 
+           text-xs font-medium text-slate-800 
+           transition-transform duration-200 
+           hover:scale-105 hover:text-blue-600 
+           focus:outline-none 
+           dark:text-blue-400 dark:hover:text-blue-400"
+    data-lang="es"
+    data-flag-es={flagEsSrc}
+    data-flag-en={flagEnSrc}
+    data-label-es="ES"
+    data-label-en="EN"
+    data-alt-es="Idioma actual: Español"
+    data-alt-en="Current language: English"
+    aria-live="polite"
+  >
+    <img
+      id="lang-flag"
+      src={flagEsSrc}
+      alt="Idioma actual: Español"
+      class="h-6 w-10 sm:h-5 sm:w-8 md:h-6 md:w-9 rounded-full object-cover shadow-sm transition-all duration-300"
+    />
+    <span class="hidden sm:inline" data-lang-label>ES</span>
+  </button>
+</div>
+
+
 </header>
 
 <script type="module" src="/scripts/header.js"></script>
