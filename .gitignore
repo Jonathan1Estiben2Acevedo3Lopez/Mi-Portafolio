@@ -1,24 +1,42 @@
-# build output
+# =========================
+# 🚀 BUILD OUTPUT
+# =========================
+# Carpeta generada tras 'npm run build'
 dist/
 
-# generated types
+# =========================
+# ⚙️ ASTRO & DEPENDENCIAS
+# =========================
 .astro/
-
-# dependencies
 node_modules/
 
-# logs
+# =========================
+# 🧪 LOGS Y REPORTES
+# =========================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+package-lock.json.lock
+*.log
 
-# environment variables
+# =========================
+# 🔒 VARIABLES DE ENTORNO
+# =========================
 .env
-.env.production
+.env.*
+!.env.example  # (opcional) Si tienes un archivo de ejemplo para variables de entorno
 
-# macOS-specific files
+# =========================
+# 🧰 EDITORES Y SISTEMA
+# =========================
 .DS_Store
-
-# jetbrains setting folder
 .idea/
+.vscode/
+
+# =========================
+# 🧾 SISTEMAS DE DEPLOY
+# =========================
+# Netlify y Vercel crean carpetas temporales locales
+.netlify/
+.vercel/
