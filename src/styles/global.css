@@ -1,1 +1,20 @@
+@config "../../tailwind.config.mjs";
 @import "tailwindcss";
+
+:root {
+  scroll-behavior: smooth;
+}
+
+#site-header.header-scrolled {
+  @apply bg-red-700/90 shadow-xl;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+}
+
