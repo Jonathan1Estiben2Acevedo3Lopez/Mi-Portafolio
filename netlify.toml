@@ -1,0 +1,93 @@
+# =========================
+# 🚀 BUILD PARA ASTRO
+# =========================
+[build]
+command = "npm run build"
+publish = "dist"
+
+[build.environment]
+# Node moderno y estable
+NODE_VERSION = "20"
+# (Opcional) Si alguna lib se pone quisquillosa con peer deps
+NPM_FLAGS = "--legacy-peer-deps"
+
+# =========================
+# 🌐 REDIRECCIONES (OPCIONAL)
+# =========================
+# Actívalo SÓLO si usas enrutamiento tipo SPA (una sola página con rutas del lado del cliente).
+# Si tu sitio es multipágina estática (lo típico en Astro), déjalo comentado.
+# [[redirects]]
+# from = "/*"
+# to = "/index.html"
+# status = 200
+
+# =========================
+# ⚙️ CABECERAS: HTML (no caché fuerte)
+# =========================
+# Evita cachear agresivamente HTML para que los cambios se vean al publicar.
+[[headers]]
+for = "/*.html"
+[headers.values]
+  Cache-Control = "no-cache, no-store, must-revalidate"
+  X-Frame-Options = "DENY"
+  X-Content-Type-Options = "nosniff"
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  # CSP básica para sitios estáticos. Ajusta si agregas analytics/externos.
+  Content-Security-Policy = """
+    default-src 'self';
+    img-src 'self' https: data:;
+    font-src 'self' https: data:;
+    style-src 'self' 'unsafe-inline';
+    script-src 'self';
+    connect-src 'self';
+    base-uri 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+  """
+
+# =========================
+# ⚙️ CABECERAS: ASSETS EMPAQUETADOS DE ASTRO
+# =========================
+# Astro publica assets fingerprinted (con hash) en /_astro/
+# Podemos cachearlos MUY fuerte e inmutable.
+[[headers]]
+for = "/_astro/*"
+[headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+# =========================
+# 🖼️ IMÁGENES (si usas /images en public/)
+# =========================
+[[headers]]
+for = "/images/*"
+[headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+# =========================
+# 🔤 FUENTES WEB (woff2/woff) CON CORS
+# =========================
+[[headers]]
+for = "/fonts/*"
+[headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+  Access-Control-Allow-Origin = "*"
+
+# =========================
+# 🤖 SEO BÁSICO: robots y sitemap
+# =========================
+[[headers]]
+for = "/robots.txt"
+[headers.values]
+  Cache-Control = "public, max-age=86400"
+
+[[headers]]
+for = "/sitemap.xml"
+[headers.values]
+  Cache-Control = "public, max-age=86400"
+
+# =========================
+# 🧩 PLUGINS (OPCIONAL)
+# =========================
+# Ejemplo: minificar HTML al vuelo
+# [[plugins]]
+# package = "netlify-plugin-minify-html"
