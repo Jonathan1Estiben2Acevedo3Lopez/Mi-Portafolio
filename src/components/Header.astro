@@ -6,6 +6,8 @@ const links = [
   { href: "#blog", label: "Blog" },
   { href: "#contacto", label: "Contactame" },
 ];
+
+import avatar from "../assets/Jonathan_Acevedo.webp";
 ---
 
 <header
@@ -22,7 +24,7 @@ const links = [
 
     <!-- 🟦 Imagen -->
     <img
-      src="/src/assets/Jonathan_Acevedo.webp"
+      src={avatar}
       alt="Foto de perfil de Jonathan Acevedo"
       class="size-10 sm:size-16 */Tamaño adaptable*/
         rounded-full /*Forma circular*/
@@ -32,7 +34,7 @@ const links = [
         transition-transform duration-300 ease-out /*Transición suave*/"
     />
 
-    <!-- 🟦 Caja texto Nombre - ocuapción -->
+    <!-- 🟦 Caja texto Nombre - ocupación -->
     <div class="leading-tight">
 
       <p class="font-bold
