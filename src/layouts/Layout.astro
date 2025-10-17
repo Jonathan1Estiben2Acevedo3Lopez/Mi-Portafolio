@@ -3,14 +3,14 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 ---
 
-<html lang="es">
+<html lang="es" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jonathan Acevedo DV</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
-  <body>
+  <body class="bg-white dark:bg-black text-slate-900 dark:text-slate-100 transition-colors duration-300">
     <Header />
     <main>
       <slot /> <!-- Aquí se insertará el contenido de cada página -->
