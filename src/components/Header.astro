@@ -1,22 +1,65 @@
 ---
+const links = [
+  { href: "#inicio", label: "Inicio" },
+  { href: "#sobre-mi", label: "Sobre mi" },
+  { href: "#proyectos", label: "Proyectos" },
+  { href: "#blog", label: "Blog" },
+  { href: "#contacto", label: "Contactame" },
+];
 ---
 
-<header data-header class="flex items-center justify-between px-4 py-3 bg-neutral-900 text-white">
-  <button
-    data-menu-btn
-    aria-controls="site-menu"
-    aria-expanded="false"
-    class="inline-flex items-center gap-2 rounded border border-white/50 px-3 py-1 text-white transition hover:bg-white/10 md:hidden"
+<header
+  id="site-header"
+  class="fixed top-4 inset-x-4 z-50 /*Posicionamiento*/ 
+    grid grid-cols-[auto_1fr_auto] items-center gap-4 /*Organización cajas internas*/ 
+    bg-transparent backdrop-blur-none border border-transparent /*Color y fondo*/
+    rounded-2xl */Forma / Estética*/
+    transition-all duration-300 /*Animaciones y transiciones*/"
   >
-    Menú
-  </button>
 
-  <nav id="site-menu" data-menu class="hidden md:flex items-center gap-4">
-    <a href="/" class="text-white/90 transition-colors hover:text-white">Inicio</a>
-    <a href="/proyectos" class="text-white/90 transition-colors hover:text-white">Proyectos</a>
-    <a href="/contacto" class="text-white/90 transition-colors hover:text-white">Contacto</a>
-  </nav>
+  <!-- 🟥 Izquierda -->
+  <div class="flex items-center gap-2 sm:gap-3">
+
+    <!-- 🟦 Imagen -->
+    <img
+      src="/src/assets/Jonathan_Acevedo.webp"
+      alt="Foto de perfil de Jonathan Acevedo"
+      class="size-10 sm:size-16 */Tamaño adaptable*/
+        rounded-full /*Forma circular*/
+        object-cover /*Escalado de imagen*/
+        ring-2 ring-slate-200 dark:ring-slate-700 /*Borde/anillo oscuro/claro*/
+        hover:ring-blue-500 hover:scale-110 /*animación*/
+        transition-transform duration-300 ease-out /*Transición suave*/"
+    />
+
+    <!-- 🟦 Caja texto Nombre - ocuapción -->
+    <div class="leading-tight">
+
+      <p class="font-bold
+          text-slate-900 dark:text-slate-100
+          text-[10px] sm:text-base">
+        Jonathan Acevedo
+      </p>
+
+      <p class="text-[9px] sm:text-base
+          text-slate-600 dark:text-slate-400">
+        Ingeniero de Sistemas y computación
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+
+  <!-- 🟥 Derecha -->
+  <div>
+
+  </div>
+
+  
+
 </header>
 
-<!-- Script del header disponible como asset público -->
 <script type="module" src="/scripts/header.js"></script>

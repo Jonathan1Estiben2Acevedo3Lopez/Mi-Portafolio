@@ -1,25 +1,13 @@
-// public/scripts/header.js
-(function () {
-  function initHeader(root) {
-    var btn = root.querySelector('[data-menu-btn]');
-    var menu = root.querySelector('[data-menu]');
-    if (!btn || !menu) return;
+// --- Transparente -> Opaco al hacer scroll ---
+const headerEl = document.getElementById('site-header');
+const SCROLL_THRESHOLD = 8; // píxeles (ajústalo)
 
-    btn.addEventListener('click', function () {
-      var nowHidden = menu.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', String(!nowHidden));
-    });
-  }
+function updateHeaderOnScroll() {
+  if (!headerEl) return;
+  const scrolled = window.scrollY > SCROLL_THRESHOLD;
+  headerEl.classList.toggle('header-scrolled', scrolled);
+}
 
-  function initAllHeaders() {
-    document.querySelectorAll('[data-header]').forEach(function (el) {
-      initHeader(el);
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAllHeaders);
-  } else {
-    initAllHeaders();
-  }
-})();
+// Ejecuta al cargar y en scroll
+updateHeaderOnScroll();
+window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
