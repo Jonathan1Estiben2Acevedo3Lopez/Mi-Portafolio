@@ -1,20 +1,22 @@
-<header data-header class="flex items-center justify-between p-4 bg-neutral-900 text-white">
+---
+---
+
+<header data-header class="flex items-center justify-between px-4 py-3 bg-neutral-900 text-white">
   <button
     data-menu-btn
     aria-controls="site-menu"
     aria-expanded="false"
-    class="inline-flex items-center gap-2 rounded border border-white/50 px-3 py-1 text-white hover:bg-white/10 md:hidden"
+    class="inline-flex items-center gap-2 rounded border border-white/50 px-3 py-1 text-white transition hover:bg-white/10 md:hidden"
   >
-    ☰ Menú
+    Menú
   </button>
 
   <nav id="site-menu" data-menu class="hidden md:flex items-center gap-4">
-    <a href="/">Inicio</a>
-    <a href="/proyectos">Proyectos</a>
-    <a href="/contacto">Contacto</a>
+    <a href="/" class="text-white/90 transition-colors hover:text-white">Inicio</a>
+    <a href="/proyectos" class="text-white/90 transition-colors hover:text-white">Proyectos</a>
+    <a href="/contacto" class="text-white/90 transition-colors hover:text-white">Contacto</a>
   </nav>
 </header>
 
-
-<!-- Script corregido -->
-<script type="module" src="../scripts/header.ts"></script>
+<!-- Script del header disponible como asset público -->
+<script type="module" src="/scripts/header.js"></script>
