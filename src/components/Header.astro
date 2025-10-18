@@ -5,10 +5,10 @@ import flagEnImage from "../assets/Flag_United_States.webp";
 
 const links = [
   { href: "#inicio", label: "Inicio", i18n: "Home" },
-  { href: "#sobre-mi", label: "Sobre mi", i18n: "About" },
+  { href: "#sobre-mi", label: "Sobre mí", i18n: "About" },
   { href: "#proyectos", label: "Proyectos", i18n: "Projects" },
   { href: "#blog", label: "Blog", i18n: "Blog" },
-  { href: "#contacto", label: "Contactame", i18n: "Contact" },
+  { href: "#contacto", label: "Contáctame", i18n: "Contact" },
 ];
 
 const avatarSrc = typeof avatarImage === "string" ? avatarImage : avatarImage.src;
@@ -18,13 +18,16 @@ const flagEnSrc = typeof flagEnImage === "string" ? flagEnImage : flagEnImage.sr
 
 <header
   id="site-header"
-  class="fixed top-4 inset-x-4 z-50 grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-2xl border border-transparent bg-transparent transition-all duration-300"
->
+  role="banner"
+  class="fixed top-4 left-4 right-4 z-50 flex items-center justify-between gap-4 rounded-2xl border border-transparent bg-transparent px-4 transition-all duration-300">
   <div class="flex items-center gap-3">
     <img
       src={avatarSrc}
       alt="Foto de perfil de Jonathan Acevedo"
       class="size-8 sm:size-16 rounded-full object-cover ring-2 ring-slate-200 transition-transform duration-300 ease-out hover:scale-110 hover:ring-blue-500 dark:ring-slate-700"
+      width="64" height="64"
+      decoding="async"
+      fetchpriority="high"
     />
     <div class="leading-tight">
       <p class="text-sm font-bold text-slate-900 dark:text-slate-100 text-[11px] sm:text-base">
@@ -35,79 +38,83 @@ const flagEnSrc = typeof flagEnImage === "string" ? flagEnImage : flagEnImage.sr
         class="font-medium text-[9px] sm:text-base text-slate-600 dark:text-slate-400 sm:text-sm"
         data-i18n="Profession"
       >
-        Ingeniero de Sistemas y Computacion
+        Ingeniero de Sistemas y Computación
       </p>
     </div>
   </div>
 
-<div class="flex items-center justify-self-end gap-3 md:gap-4">
-  <nav
-    aria-label="Navegacion principal"
-    class="hidden md:block justify-self-end"
-  >
-    <ul class="flex items-center gap-6">
-      {links.map((link) => (
-        <li>
-          <a
-            href={link.href}
-            id={link.i18n}
-            data-i18n={link.i18n}
-            class="relative font-medium text-slate-700 dark:text-slate-200 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-blue-500 dark:after:bg-blue-500 after:transition-transform after:duration-500 hover:after:scale-x-100"
-          >
-            {link.label}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </nav>
-
-  <!-- 🔹 Separador moderno -->
-  <div
-    class="hidden items-center  md:block h-6 w-[1px] bg-gradient-to-b from-slate-300 via-slate-400 to-slate-300
-          dark:from-slate-600 dark:via-slate-500 dark:to-slate-600 mx-4 rounded-full shadow-sm">
-  </div>
-
-
   <div class="flex items-center justify-self-end gap-3 md:gap-4">
-    <button
-      id="lang-toggle"
-      type="button"
-      aria-label="Cambiar idioma"
-      class="inline-flex size-7 md:size-8 items-center justify-center rounded-full overflow-hidden text-xs font-medium text-slate-800 transition-transform duration-200 hover:scale-110 hover:ring-2 hover:ring-blue-500/50 focus:outline-none dark:text-blue-400"
-      data-lang="es"
-      data-flag-es={flagEsSrc}
-      data-flag-en={flagEnSrc}
-      data-label-es="ES"
-      data-label-en="EN"
-      data-alt-es="Idioma actual: Espanol"
-      data-alt-en="Current language: English"
-      aria-live="polite"
+    <nav
+      aria-label="Navegación principal"
+      class="hidden md:block justify-self-end"
+      role="navigation"
     >
-      <img
-        id="lang-flag"
-        src={flagEsSrc}
-        alt="Idioma actual: Espanol"
-        class="h-full w-full object-cover"
-      />
-    </button>
+      <ul class="flex items-center gap-6">
+        {links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              data-i18n={link.i18n}
+              class="relative font-medium text-slate-700 dark:text-slate-200 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-blue-500 dark:after:bg-blue-500 after:transition-transform after:duration-500 hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/70 rounded"
+              aria-current="false"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
 
-    <button
-      id="theme-toggle-desktop"
-      type="button"
-      aria-label="Cambiar tema claro/oscuro"
-      aria-pressed="false"
-      class="inline-flex size-10 items-center justify-center rounded-xl text-slate-700 hover:text-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-blue-400 dark:hover:text-blue-400"
-    >
-      <span
-        id="theme-icon-desktop"
-        class="material-symbols-outlined leading-none text-[20px] md:text-[22px]"
-      >light_mode</span>
-    </button>
-</div>
+    <!-- 🔹 Separador moderno -->
+    <div
+      class="items-center h-6 w-[1px] bg-gradient-to-b from-slate-300 via-slate-400 to-slate-300 dark:from-slate-600 dark:via-slate-500 dark:to-slate-600 mx-4 rounded-full shadow-sm"
+      role="separator" aria-orientation="vertical" aria-hidden="true"
+    ></div>
+
+    <div class="flex items-center justify-self-end gap-3 md:gap-4">
+      <button
+        id="lang-toggle"
+        type="button"
+        aria-label="Cambiar idioma"
+        class="inline-flex size-7 md:size-8 items-center justify-center rounded-full overflow-hidden text-xs font-medium text-slate-800 transition-transform duration-200 hover:scale-110 hover:ring-2 hover:ring-blue-500/50 focus:outline-none dark:text-blue-400"
+        data-lang="es"
+        data-flag-es={flagEsSrc}
+        data-flag-en={flagEnSrc}
+        data-label-es="ES"
+        data-label-en="EN"
+        data-alt-es="Idioma actual: Español"
+        data-alt-en="Current language: English"
+        aria-live="polite"
+      >
+        <img
+          id="lang-flag"
+          src={flagEsSrc}
+          alt="Idioma actual: Español"
+          class="h-full w-full object-cover"
+          width="24" height="24"
+          decoding="async"
+        />
+      </button>
+
+      <button
+        id="theme-toggle-desktop"
+        type="button"
+        aria-label="Cambiar tema claro/oscuro"
+        aria-pressed="false"
+        class="inline-flex size-10 items-center justify-center rounded-xl text-slate-700 hover:text-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-blue-400 dark:hover:text-blue-400"
+      >
+        <span
+          id="theme-icon-desktop"
+          class="material-symbols-outlined leading-none text-[20px] md:text-[22px]"
+          aria-hidden="true"
+        >light_mode</span>
+      </button>
+    </div>
+
     <button
       id="menu-btn"
       type="button"
-      aria-label="Abrir menu de navegacion"
+      aria-label="Abrir menú de navegación"
       aria-controls="mobile-panel"
       aria-expanded="false"
       class="inline-flex size-10 items-center justify-center rounded-xl text-slate-700 transition-all duration-300 ease-out hover:scale-110 hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-blue-400 dark:hover:bg-blue-900/30 md:hidden"
@@ -149,13 +156,14 @@ const flagEnSrc = typeof flagEnImage === "string" ? flagEnImage : flagEnImage.sr
   id="mobile-panel"
   class="md:hidden hidden fixed right-4 top-16 z-50 w-[min(92vw,22rem)] rounded-2xl border border-slate-200/70 bg-white/95 shadow-xl backdrop-blur dark:border-slate-700/60 dark:bg-slate-900/95"
   style="padding-right: env(safe-area-inset-right);"
+  role="dialog" aria-modal="true" aria-label="Navegación móvil" inert
 >
-  <nav class="p-2" aria-label="Navegacion movil">
+  <nav class="p-2">
     <ul class="flex flex-col divide-y divide-slate-200/60 dark:divide-slate-700/60">
       {links.map((link) => (
         <li>
           <a
-            class="block px-4 py-3 text-sm text-slate-600 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-400"
+            class="block px-4 py-3 text-sm text-slate-600 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/70 rounded"
             href={link.href}
             data-i18n={link.i18n}
             data-menu-link
@@ -168,6 +176,7 @@ const flagEnSrc = typeof flagEnImage === "string" ? flagEnImage : flagEnImage.sr
   </nav>
 </div>
 
+<!-- Scripts -->
 <script type="module" src="/scripts/header.js"></script>
 <script type="module" src="/scripts/i18n-client.js"></script>
 <script type="module" src="/scripts/themeToggle.js"></script>
