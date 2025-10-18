@@ -20,160 +20,224 @@ const flagEnSrc = typeof flagEnImage === "string" ? flagEnImage : flagEnImage.sr
   id="site-header"
   class="fixed top-4 inset-x-4 z-50 grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-2xl border border-transparent bg-transparent transition-all duration-300"
 >
-  <!-- ðŸŸ§ Caja de Foto, Nombre, OcupaciÃ³n -->
+  <!-- ?? Caja de Foto, Nombre, Ocupación -->
 
   <div class="flex items-center gap-3">
     <img
       src={avatarSrc}
       alt="Foto de perfil de Jonathan Acevedo"
-      class="size-8 sm:size-16  rounded-full object-cover ring-2 ring-slate-200 transition-transform duration-300 ease-out hover:scale-110 hover:ring-blue-500 dark:ring-slate-700"
+      class="size-8 sm:size-16 rounded-full object-cover ring-2 ring-slate-200 transition-transform duration-300 ease-out hover:scale-110 hover:ring-blue-500 dark:ring-slate-700"
     />
     <div class="leading-tight">
       <p class="text-sm font-bold text-slate-900 dark:text-slate-100 text-[11px] sm:text-base">
         Jonathan Acevedo
       </p>
-      <p id = "Profession" class="font-medium text-[9px] sm:text-base text-slate-600 dark:text-slate-400 sm:text-sm"
-        data-i18n ="Profession">
+      <p
+        id="Profession"
+        class="font-medium text-[9px] sm:text-base text-slate-600 dark:text-slate-400 sm:text-sm"
+        data-i18n="Profession"
+      >
         Ingeniero de Sistemas y Computacion
       </p>
     </div>
   </div>
 
-  <!-- ðŸŸ§ Caja Izquierda -->
+  <!-- ?? Caja Izquierda -->
 
   <div class="flex items-center gap-6 justify-end justify-self-stretch">
 
-    <!-- ðŸŸ§ Caja de navegaciÃ³n -->
+    <!-- ?? Caja de navegación -->
 
-    <nav aria-label="NavegaciÃ³n principal" class="flex items-center hidden md:block gap-6 justify-end justify-self-stretch">
+    <nav
+      aria-label="Navegación principal"
+      class="flex items-center hidden md:block gap-6 justify-end justify-self-stretch"
+    >
       <ul class="flex items-center gap-6">
         <li>
-          <a href="#inicio" id="Home" data-i18n="Home"
-            class="relative font-medium text-slate-700 dark:text-slate-200 
-                    transition-colors duration-300 
-                    after:absolute after:left-0 after:-bottom-1 after:h-[2px] 
-                    after:w-full after:origin-left after:scale-x-0 
-                    after:bg-blue-500 dark:after:bg-blue-500 
-                    after:transition-transform after:duration-500 
-                    hover:after:scale-x-100">
+          <a
+            href="#inicio"
+            id="Home"
+            data-i18n="Home"
+            class="relative font-medium text-slate-700 dark:text-slate-200 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-blue-500 dark:after:bg-blue-500 after:transition-transform after:duration-500 hover:after:scale-x-100"
+          >
             Inicio
           </a>
         </li>
 
         <li>
-          <a href="#sobre-mi" id="About" data-i18n="About"
-            class="relative font-medium text-slate-700 dark:text-slate-200 
-                    transition-colors duration-300 
-                    after:absolute after:left-0 after:-bottom-1 after:h-[2px] 
-                    after:w-full after:origin-left after:scale-x-0 
-                    after:bg-blue-500 dark:after:bg-blue-500 
-                    after:transition-transform after:duration-500 
-                    hover:after:scale-x-100">
-            Sobre mÃ­
+          <a
+            href="#sobre-mi"
+            id="About"
+            data-i18n="About"
+            class="relative font-medium text-slate-700 dark:text-slate-200 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-blue-500 dark:after:bg-blue-500 after:transition-transform after:duration-500 hover:after:scale-x-100"
+          >
+            Sobre mí
           </a>
         </li>
 
         <li>
-          <a href="#proyectos" id="Projects" data-i18n="Projects"
-            class="relative font-medium text-slate-700 dark:text-slate-200 
-                    transition-colors duration-300 
-                    after:absolute after:left-0 after:-bottom-1 after:h-[2px] 
-                    after:w-full after:origin-left after:scale-x-0 
-                    after:bg-blue-500 dark:after:bg-blue-500 
-                    after:transition-transform after:duration-500 
-                    hover:after:scale-x-100">
+          <a
+            href="#proyectos"
+            id="Projects"
+            data-i18n="Projects"
+            class="relative font-medium text-slate-700 dark:text-slate-200 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-blue-500 dark:after:bg-blue-500 after:transition-transform after:duration-500 hover:after:scale-x-100"
+          >
             Proyectos
           </a>
         </li>
 
         <li>
-          <a href="#blog" id="Blog" data-i18n="Blog"
-            class="relative font-medium text-slate-700 dark:text-slate-200 
-                    transition-colors duration-300 
-                    after:absolute after:left-0 after:-bottom-1 after:h-[2px] 
-                    after:w-full after:origin-left after:scale-x-0 
-                    after:bg-blue-500 dark:after:bg-blue-500 
-                    after:transition-transform after:duration-500 
-                    hover:after:scale-x-100">
+          <a
+            href="#blog"
+            id="Blog"
+            data-i18n="Blog"
+            class="relative font-medium text-slate-700 dark:text-slate-200 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-blue-500 dark:after:bg-blue-500 after:transition-transform after:duration-500 hover:after:scale-x-100"
+          >
             Blog
           </a>
         </li>
 
         <li>
-          <a href="#contacto" id="Contact" data-i18n="Contact"
-            class="relative font-medium text-slate-700 dark:text-slate-200 
-                    transition-colors duration-300 
-                    after:absolute after:left-0 after:-bottom-1 after:h-[2px] 
-                    after:w-full after:origin-left after:scale-x-0 
-                    after:bg-blue-500 dark:after:bg-blue-500 
-                    after:transition-transform after:duration-500 
-                    hover:after:scale-x-100">
-            ContÃ¡ctame
+          <a
+            href="#contacto"
+            id="Contact"
+            data-i18n="Contact"
+            class="relative font-medium text-slate-700 dark:text-slate-200 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-blue-500 dark:after:bg-blue-500 after:transition-transform after:duration-500 hover:after:scale-x-100"
+          >
+            Contáctame
           </a>
         </li>
       </ul>
     </nav>
 
-    <!-- separador -->
+    <!-- Separador -->
 
     <div class="h-5 w-px bg-slate-200 dark:bg-slate-700"></div>
 
-    <!-- ðŸŸ§ BotÃ³n de idioma -->
+    <!-- ?? Botón de idioma -->
 
     <div class="flex items-center justify-end justify-self-stretch gap-3 md:gap-4">
       <button
         id="lang-toggle"
         type="button"
         aria-label="Cambiar idioma"
-        class="flex items-center justify-center 
-              size-6 sm:size-6 md:size-7
-              rounded-full overflow-hidden
-              text-xs font-medium text-slate-800
-              transition-transform duration-200 
-              hover:scale-110 hover:ring-2 hover:ring-blue-500/50 
-              focus:outline-none
-              dark:text-blue-400"
-              data-lang="es"
-              data-flag-es={flagEsSrc}
-              data-flag-en={flagEnSrc}
-              data-label-es="ES"
-              data-label-en="EN"
-              data-alt-es="Idioma actual: EspaÃ±ol"
-              data-alt-en="Current language: English"
-              aria-live="polite"
-            >
+        class="flex items-center justify-center size-6 sm:size-6 md:size-7 rounded-full overflow-hidden text-xs font-medium text-slate-800 transition-transform duration-200 hover:scale-110 hover:ring-2 hover:ring-blue-500/50 focus:outline-none dark:text-blue-400"
+        data-lang="es"
+        data-flag-es={flagEsSrc}
+        data-flag-en={flagEnSrc}
+        data-label-es="ES"
+        data-label-en="EN"
+        data-alt-es="Idioma actual: Español"
+        data-alt-en="Current language: English"
+        aria-live="polite"
+      >
         <img
           id="lang-flag"
           src={flagEsSrc}
-          alt="Idioma actual: EspaÃ±ol"
+          alt="Idioma actual: Español"
           class="h-full w-full object-cover rounded-full transition-all duration-300"
         />
       </button>
     </div>
 
-    <!-- ðŸŸ§ BotÃ³n modo claro/oscuro -->
+    <!-- ?? Botón modo claro/oscuro -->
 
-    <div class="shrink-0 -mt-0 md:-mt-0">
+    <div class="shrink-0">
       <button
         id="theme-toggle-desktop"
         type="button"
         aria-label="Cambiar tema claro/oscuro"
         aria-pressed="false"
-        class="flex items-center justify-center pb-0
-            text-slate-700 hover:text-blue-600 focus:outline-none 
-            dark:text-blue-400 dark:hover:text-blue-400"
+        class="flex items-center justify-center pb-0 text-slate-700 hover:text-blue-600 focus:outline-none dark:text-blue-400 dark:hover:text-blue-400"
+      >
+        <span
+          id="theme-icon-desktop"
+          class="material-symbols-outlined leading-none text-[15px] md:text-[24px]"
         >
-          <span
-            id="theme-icon-desktop"
-            class="material-symbols-outlined leading-none text-[15px] md:text-[24px]"
-          >
-            light_mode
-          </span>
+          light_mode
+        </span>
       </button>
     </div>
 
+    <!-- ?? Botón menú (solo visible en móvil) -->
+    <div class="md:hidden ml-auto shrink-0">
+      <button
+        id="menu-btn"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-controls="mobile-panel"
+        aria-expanded="false"
+        class="relative size-10 grid place-items-center rounded-xl text-slate-700 dark:text-blue-400 transition-all duration-300 ease-out hover:scale-110 hover:bg-blue-50 dark:hover:bg-blue-900/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+      >
+        <span
+          id="menu-icon"
+          class="material-symbols-outlined text-[26px] transition-transform duration-300 ease-out"
+        >
+          menu
+        </span>
+      </button>
+    </div>
 
+    <!-- ?? Panel del menú móvil -->
+    <div
+      id="mobile-panel"
+      class="pointer-events-none fixed inset-0 z-40 flex justify-end md:hidden"
+      aria-hidden="true"
+      data-state="closed"
+    >
+      <div
+        data-menu-backdrop
+        class="absolute inset-0 bg-slate-950/20 opacity-0 transition-opacity duration-300 ease-out dark:bg-slate-950/40"
+      ></div>
 
+      <nav
+        aria-label="Navegación móvil"
+        data-menu-sheet
+        tabindex="-1"
+        class="relative mt-20 mr-4 flex w-[min(18rem,calc(100%-2rem))] flex-col gap-5 rounded-2xl border border-slate-200 bg-white/95 p-6 text-base font-medium text-slate-800 opacity-0 translate-y-4 scale-95 shadow-2xl ring-1 ring-slate-900/10 transition-all duration-300 ease-out backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/95 dark:text-slate-100 dark:ring-white/10"
+      >
+        <a
+          href="#inicio"
+          data-menu-link
+          data-i18n="Home"
+          class="transition-colors hover:text-blue-500 dark:hover:text-blue-400"
+        >
+          Inicio
+        </a>
+        <a
+          href="#sobre-mi"
+          data-menu-link
+          data-i18n="About"
+          class="transition-colors hover:text-blue-500 dark:hover:text-blue-400"
+        >
+          Sobre mí
+        </a>
+        <a
+          href="#proyectos"
+          data-menu-link
+          data-i18n="Projects"
+          class="transition-colors hover:text-blue-500 dark:hover:text-blue-400"
+        >
+          Proyectos
+        </a>
+        <a
+          href="#blog"
+          data-menu-link
+          data-i18n="Blog"
+          class="transition-colors hover:text-blue-500 dark:hover:text-blue-400"
+        >
+          Blog
+        </a>
+        <a
+          href="#contacto"
+          data-menu-link
+          data-i18n="Contact"
+          class="transition-colors hover:text-blue-500 dark:hover:text-blue-400"
+        >
+          Contáctame
+        </a>
+      </nav>
+    </div>
 
   </div>
 </header>
@@ -181,3 +245,4 @@ const flagEnSrc = typeof flagEnImage === "string" ? flagEnImage : flagEnImage.sr
 <script type="module" src="/scripts/header.js"></script>
 <script type="module" src="/scripts/i18n-client.js"></script>
 <script type="module" src="/scripts/themeToggle.js"></script>
+<script type="module" src="/scripts/menuToggle.js"></script>
