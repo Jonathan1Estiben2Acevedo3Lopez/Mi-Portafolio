@@ -2,10 +2,11 @@ const TRANSITION_MS = 280;
 
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menu-btn");
-  const menuIcon = document.getElementById("menu-icon");
   const panel = document.getElementById("mobile-panel");
+  const iconOpen = document.getElementById("menu-icon-open");
+  const iconClose = document.getElementById("menu-icon-close");
 
-  if (!menuBtn || !menuIcon || !panel) {
+  if (!menuBtn || !panel || !iconOpen || !iconClose) {
     return;
   }
 
@@ -23,10 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
     menuBtn.setAttribute("aria-expanded", String(isOpen));
     menuBtn.setAttribute(
       "aria-label",
-      isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"
+      isOpen ? "Cerrar menu de navegacion" : "Abrir menu de navegacion"
     );
-    menuIcon.textContent = isOpen ? "close" : "menu";
-    menuIcon.classList.toggle("rotate-90", isOpen);
+
+    iconOpen.classList.toggle("opacity-0", isOpen);
+    iconOpen.classList.toggle("scale-100", !isOpen);
+    iconOpen.classList.toggle("scale-90", isOpen);
+
+    iconClose.classList.toggle("opacity-0", !isOpen);
+    iconClose.classList.toggle("scale-100", isOpen);
+    iconClose.classList.toggle("scale-95", !isOpen);
   };
 
   const animateOpen = () => {

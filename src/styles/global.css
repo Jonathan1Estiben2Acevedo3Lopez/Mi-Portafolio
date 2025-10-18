@@ -16,5 +16,8 @@
   .dark {
     color-scheme: dark;
   }
+  .material-symbols-outlined {
+    font-size: inherit;
+    line-height: 1em;
+  }
 }
-
