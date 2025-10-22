@@ -24,18 +24,18 @@ const flagEnSrc = typeof flagEnImage === "string" ? flagEnImage : flagEnImage.sr
     <img
       src={avatarSrc}
       alt="Foto de perfil de Jonathan Acevedo"
-      class="size-8 sm:size-16 rounded-full object-cover ring-2 ring-slate-200 transition-transform duration-300 ease-out hover:scale-110 hover:ring-blue-500 dark:ring-slate-700"
+      class="size-8 sm:size-16 rounded-full object-cover ring-2 ring-slate-200 dark:ring-slate-700 transition-transform duration-300 ease-out hover:scale-110 hover:ring-blue-500 dark:hover:ring-blue-400"
       width="64" height="64"
       decoding="async"
       fetchpriority="high"
     />
     <div class="leading-tight">
-      <p class="text-sm font-bold text-slate-900 dark:text-slate-100 text-[11px] sm:text-base">
+      <p class="text-sm font-semibold text-slate-900 dark:text-slate-100 text-[11px] sm:text-base">
         Jonathan Acevedo
       </p>
       <p
         id="Profession"
-        class="font-medium text-[9px] sm:text-base text-slate-600 dark:text-slate-400 sm:text-sm"
+        class="font-normal text-[9px] sm:text-base text-slate-600 dark:text-slate-400 sm:text-sm"
         data-i18n="Profession"
       >
         Ingeniero de Sistemas y Computación
@@ -55,7 +55,7 @@ const flagEnSrc = typeof flagEnImage === "string" ? flagEnImage : flagEnImage.sr
             <a
               href={link.href}
               data-i18n={link.i18n}
-              class="relative font-medium text-slate-700 dark:text-slate-200 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-blue-500 dark:after:bg-blue-500 after:transition-transform after:duration-500 hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/70 rounded"
+              class="relative font-medium text-sm text-black dark:text-slate-100 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-blue-500 dark:after:bg-blue-500 after:transition-transform after:duration-500 hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/70 rounded"
               aria-current="false"
             >
               {link.label}
@@ -76,7 +76,7 @@ const flagEnSrc = typeof flagEnImage === "string" ? flagEnImage : flagEnImage.sr
         id="lang-toggle"
         type="button"
         aria-label="Cambiar idioma"
-        class="inline-flex size-7 md:size-8 items-center justify-center rounded-full overflow-hidden text-xs font-medium text-slate-800 transition-transform duration-200 hover:scale-110 hover:ring-2 hover:ring-blue-500/50 focus:outline-none dark:text-blue-400"
+        class="inline-flex size-6 md:size-7 items-center justify-center rounded-full overflow-hidden text-xs font-medium text-slate-800 transition-transform duration-200 hover:scale-110 hover:ring-2 hover:ring-blue-500/50 focus:outline-none dark:text-blue-400"
         data-lang="es"
         data-flag-es={flagEsSrc}
         data-flag-en={flagEnSrc}
