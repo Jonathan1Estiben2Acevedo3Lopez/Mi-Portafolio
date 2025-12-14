@@ -1,5 +1,6 @@
 ---
-import avatarImage from "../assets/Jonathan_Acevedo.webp";
+
+import avatarImage from "../assets/Logo_gato_negro.svg";
 import flagEsImage from "../assets/Flag_Colombia.webp";
 import flagEnImage from "../assets/Flag_United_States.webp";
 
@@ -21,14 +22,21 @@ const flagEnSrc = typeof flagEnImage === "string" ? flagEnImage : flagEnImage.sr
   role="banner"
   class="fixed top-4 left-4 right-4 z-50 flex items-center justify-between gap-4 rounded-2xl border border-transparent bg-transparent px-4 transition-all duration-300">
   <div class="flex items-center gap-3">
-    <img
-      src={avatarSrc}
-      alt="Foto de perfil de Jonathan Acevedo"
-      class="size-8 sm:size-16 rounded-full object-cover ring-2 ring-slate-200 dark:ring-slate-700 transition-transform duration-300 ease-out hover:scale-110 hover:ring-blue-500 dark:hover:ring-blue-400"
-      width="64" height="64"
-      decoding="async"
-      fetchpriority="high"
-    />
+    <div
+      class="size-8 sm:size-16 rounded-full overflow-hidden
+            ring-2 ring-slate-200 dark:ring-slate-700
+            transition-transform duration-300 ease-out
+            hover:scale-110 hover:ring-blue-500 dark:hover:ring-blue-400"
+    >
+      <img
+        src={avatarSrc}
+        alt="Foto de perfil de Jonathan Acevedo"
+        class="h-full w-full object-cover object-center scale-135 filter invert-0 dark:invert"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </div>
+
     <div class="leading-tight">
       <p class="text-sm font-semibold text-slate-900 dark:text-slate-100 text-[11px] sm:text-base">
         Jonathan Acevedo

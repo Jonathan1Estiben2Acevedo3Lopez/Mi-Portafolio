@@ -1,0 +1,79 @@
+---
+/* Hero Section principal para el portafolio de Jonathan Acevedo */
+import heroImage from "../assets/Jonathan_Acevedo.webp";
+
+const heroSrc = typeof heroImage === "string" ? heroImage : heroImage.src;
+const role = "Ingeniero de Sistemas y Computación";
+const tagline =
+  "Diseño y desarrollo soluciones tecnológicas claras, mantenibles y enfocadas en resultados.";
+---
+
+<section id="inicio" class="pt-0 md:pt-0 lg:pt-0 pb-0">
+  <div class="mx-auto max-w-5xl px-4">
+    <!-- Tarjeta grande de la hero -->
+    <div
+      class="grid gap-8 rounded-3xl border border-slate-200/70 bg-white/70
+             p-6 shadow-xl backdrop-blur-md
+             dark:border-slate-700/70 dark:bg-slate-900/70
+             sm:p-10 sm:grid-cols-[0.9fr,1.4fr]"
+    >
+      <!-- Columna izquierda: foto -->
+      <div class="flex items-center justify-center">
+        <div
+          class="relative aspect-[3/4] w-full max-w-xs overflow-hidden rounded-2xl
+                 border border-slate-200 bg-slate-50 shadow-md
+                 dark:border-slate-700 dark:bg-slate-900"
+        >
+          <img
+            src={heroSrc}
+            alt="Foto de Jonathan Acevedo"
+            class="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+
+      <!-- Columna derecha: texto + botones -->
+      <div class="flex flex-col justify-center gap-6">
+        <div class="space-y-2">
+          <p class="text-sm font-medium uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+            Hola, soy
+          </p>
+          <h1 class="text-3xl font-semibold text-slate-900 sm:text-4xl dark:text-slate-50">
+            Jonathan Acevedo
+          </h1>
+          <p class="text-base font-medium text-blue-700 dark:text-blue-400">
+            {role}
+          </p>
+          <p class="text-sm text-slate-600 dark:text-slate-300 max-w-xl">
+            {tagline}
+          </p>
+        </div>
+
+        <!-- Botones -->
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="#proyectos"
+            class="inline-flex items-center justify-center rounded-full
+                   bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white
+                   shadow-md transition hover:bg-blue-700 hover:shadow-lg
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/70"
+          >
+            Ver proyectos
+          </a>
+
+          <a
+            href="#contacto"
+            class="inline-flex items-center justify-center rounded-full
+                   border border-slate-300 bg-white/80 px-6 py-2.5 text-sm font-semibold
+                   text-slate-800 shadow-sm transition
+                   hover:border-blue-500 hover:text-blue-600 hover:shadow-md
+                   dark:border-slate-600 dark:bg-slate-900/70 dark:text-slate-100
+                   dark:hover:border-blue-400 dark:hover:text-blue-300"
+          >
+            Contáctame
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -6,7 +6,7 @@
 }
 
 #site-header.header-scrolled {
-  @apply bg-red-700/90 shadow-xl;
+  @apply bg-white/70 dark:bg-slate-900/60 backdrop-blur-md shadow-lg;
 }
 
 @layer base {
